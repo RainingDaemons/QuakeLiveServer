@@ -21,7 +21,7 @@ color
 catch_errors
 
 # Fetch the installer from this repository instead of the community-scripts repo
-eval "$(declare -f build_container | sed 's#https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/install#https://raw.githubusercontent.com/RainingDaemons/QuakeLiveServer/lxc/install#g')"
+eval "$(declare -f build_container | sed 's#https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/install#https://raw.githubusercontent.com/RainingDaemons/QuakeLiveServer/main/install#g')"
 
 function update_script() {
   header_info

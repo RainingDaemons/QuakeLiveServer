@@ -83,6 +83,6 @@ msg_ok "Created Service"
 motd_ssh
 
 # Point the in-container "update" command at this repository
-eval "$(declare -f customize | sed 's#https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct#https://raw.githubusercontent.com/RainingDaemons/QuakeLiveServer/lxc#g')"
+eval "$(declare -f customize | sed 's#https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct#https://raw.githubusercontent.com/RainingDaemons/QuakeLiveServer/main#g')"
 customize
 cleanup_lxc
