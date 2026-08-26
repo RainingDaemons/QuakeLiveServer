@@ -50,13 +50,11 @@ cp /tmp/QuakeLiveServer/config.toml /home/steam/quakelive/config.toml
 cp /tmp/QuakeLiveServer/run_server.sh /home/steam/quakelive/run_server.sh
 cp /tmp/QuakeLiveServer/update_server.sh /home/steam/quakelive/update_server.sh
 cp /tmp/QuakeLiveServer/check.sh /home/steam/quakelive/check.sh
-cp /tmp/QuakeLiveServer/download_workshop.py /home/steam/quakelive/download_workshop.py
 rm -rf /tmp/QuakeLiveServer
 chmod +x /home/steam/quakelive/run_server.sh
 chmod +x /home/steam/quakelive/update_server.sh
 chmod +x /home/steam/quakelive/check.sh
 mkdir -p /home/steam/quakelive/home
-touch /home/steam/quakelive/home/workshop.txt
 chown -R steam:steam /home/steam/quakelive
 msg_ok "Set up Quake Live Server"
 
@@ -79,6 +77,12 @@ WantedBy=multi-user.target
 EOF
 systemctl enable -q --now quakelive
 msg_ok "Created Service"
+
+msg_info "Started cleanup process"
+rm -rf /home/steam/quakelive/home/baseq3/server.cfg
+rm -rf /home/steam/quakelive/home/baseq3/mappool.txt
+rm -rf /home/steam/quakelive/home/baseq3/access.txt
+msg_ok "Finished cleanup process"
 
 motd_ssh
 

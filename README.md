@@ -39,18 +39,35 @@ systemctl restart quakelive.service
 
 ## Playing with steam workshop content
 
-Inside `/home/steam/quakelive/home` create a file named `workshop.txt` with the IDs of the workshop items you want to download, for example:
+Check in `/home/steam/quakelive/qlds/baseq3/server.cfg` if the following vars are set:
+```
+set sv_mapPoolFile "mappool.txt"
+set serverstartup "startRandomMap"
+```
 
+Now inside `/home/steam/quakelive/qlds/baseq3/workshop.txt` add the IDs of the workshop items you want to download, for example:
 ```
 # Specify 1 workshop item id per line
-2824816332
-3137996356
-```
-
-Then run the following script to autodownload your mods:
-
-```
-./download_mods.sh
+1502166021
+572015381
 ```
 
 Then restart the server, now your workshop content will be automatically loaded.
+
+## Creating a Map Pool
+
+In `/home/steam/quakelive/qlds/baseq3/mappool.txt` specify the maps for the rotation pool including a `factoryid` to define the game mode for each map:
+```
+# specify 1 map per line, mapname|factoryid
+# ex: aerowalk|ffa
+# see factories.txt for valid factory id values
+hangtime|ffa
+ql_dust2|ffa
+```
+
+## Admin access
+
+To grant administrator access to a user, you need their `steamID64`, which is available using a service like [SteamID.io](https://steamid.io/). Then add it to `/home/steam/quakelive/qlds/baseq3/access.txt` specifying the corresponding role:
+```
+steamid64|admin
+```
