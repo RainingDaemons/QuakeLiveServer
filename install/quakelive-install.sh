@@ -26,6 +26,7 @@ $STD ufw allow 27960/udp
 $STD ufw allow 27960/tcp
 $STD ufw allow 28960/tcp
 $STD ufw allow 28960/udp
+$STD ufw allow 34447/udp
 msg_ok "Set up Firewall"
 
 msg_info "Creating steam user"
