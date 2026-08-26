@@ -1,0 +1,16 @@
+[general]
+hostname       = "My Quake Live Server"
+password       = ""
+net_port       = "27960"
+fs_homepath    = "/home/steam/quakelive/home"
+sv_lan         = "0" # 1 only for LAN testing, per guide troubleshooting notes
+sv_servertype  = "2" # 0 offline, 1 LAN, 2 internet
+zmq_stats_enable   = "0"
+zmq_stats_port     = "27960"
+zmq_stats_password = ""
+zmq_rcon_enable    = "0"
+zmq_rcon_port      = "28960"
+zmq_rcon_password  = ""
+
+[linux]
+linux_dir = "/home/steam/quakelive/qlds"
