@@ -16,7 +16,7 @@ update_os
 msg_info "Installing Dependencies"
 $STD dpkg --add-architecture i386
 $STD apt-get update
-$STD apt-get install -y ca-certificates wget git python3 python3-pip lib32gcc-s1 lib32stdc++6 lib32z1 ufw
+$STD apt-get install -y ca-certificates wget git python3 python3-pip lib32gcc-s1 lib32stdc++6 lib32z1 libc6:i386 libstdc++6:i386 ufw
 $STD pip3 install --break-system-packages pyzmq
 msg_ok "Installed Dependencies"
 
